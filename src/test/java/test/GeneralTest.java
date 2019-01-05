@@ -14,6 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import core.WebDriverConfig;
 import pages.App;
 
+
 @RunWith(SpringJUnit4ClassRunner.class) 
 @ContextConfiguration(classes = WebDriverConfig.class)
 public class GeneralTest {
