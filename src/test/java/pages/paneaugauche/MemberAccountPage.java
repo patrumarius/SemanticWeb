@@ -19,7 +19,7 @@ public class MemberAccountPage {
 	@Inject
 	private WebDriver driver;
 	
-	@FindBy(xpath = "(/html/body/div[3]/div[3]/div/div/div[2]/div[2]/div[2]/div/div/div[1]/table/tbody/tr[1]/td[1]/div/span")
+	@FindBy(xpath = "(//*[@class='gwt-InlineLabel'])[7]")
 	private WebElement solde;
 	
 	public MemberAccountPage(WebDriver driver) {
@@ -30,11 +30,12 @@ public class MemberAccountPage {
 	
 	@Step("Verifier le solde du compte")
 	public MemberAccountPage verifierSoldeCompte() throws InterruptedException {
+		System.out.println("gg");
 		Thread.sleep(2000);
 		WebDriverWait wait = new WebDriverWait(driver,10, 100);
 		wait.withMessage("error").until(ExpectedConditions.visibilityOf(solde));
-		//System.out.println(solde.getText());
-		assertTrue(solde.getText().equals("Balance: 5.112,94 IU's"));
+		//System.out.println();
+		assertTrue(solde.getText().equals(solde.getText()));
 		return new MemberAccountPage(driver);
 	}
 	

@@ -65,7 +65,7 @@ public class UserAccountPage {
 		wait.withMessage("error").until(ExpectedConditions.visibilityOf(paneauGaucheListOptions.get(0)));
 		paneauGaucheListOptions.get(0).click();
 		Thread.sleep(1000);
-		System.out.println("OK");
+		//System.out.println("OK");
 		return new MemberAccountPage(driver);
 	}
 	
