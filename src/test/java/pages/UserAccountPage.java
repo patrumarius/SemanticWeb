@@ -61,6 +61,8 @@ public class UserAccountPage {
 	
 	@Step("Acceser le solde du compte")
 	public MemberAccountPage acceserSoldeCompte() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver,10, 100);
+		wait.withMessage("error").until(ExpectedConditions.visibilityOf(paneauGaucheListOptions.get(0)));
 		paneauGaucheListOptions.get(0).click();
 		Thread.sleep(1000);
 		System.out.println("OK");
