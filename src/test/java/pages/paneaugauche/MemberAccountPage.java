@@ -32,8 +32,10 @@ public class MemberAccountPage {
 	public MemberAccountPage verifierSoldeCompte() {
 		WebDriverWait wait = new WebDriverWait(driver,10, 100);
 		wait.withMessage("error").until(ExpectedConditions.visibilityOf(solde));
-		System.out.println(solde.getText());
+		//System.out.println(solde.getText());
 		assertTrue(solde.getText().equals("Balance: 5.112,94 IU's"));
 		return new MemberAccountPage(driver);
 	}
+	
+	
 }
