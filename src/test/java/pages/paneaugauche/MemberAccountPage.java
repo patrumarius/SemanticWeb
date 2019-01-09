@@ -19,7 +19,7 @@ public class MemberAccountPage {
 	@Inject
 	private WebDriver driver;
 	
-	@FindBy(xpath = "(//*[@class='gwt-InlineLabel'])[7]")
+	@FindBy(xpath = "(/html/body/div[3]/div[3]/div/div/div[2]/div[2]/div[2]/div/div/div[1]/table/tbody/tr[1]/td[1]/div/span")
 	private WebElement solde;
 	
 	public MemberAccountPage(WebDriver driver) {
