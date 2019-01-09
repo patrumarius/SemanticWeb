@@ -33,6 +33,7 @@ public class GeneralTest {
 		driver.get(baseUrl.toString());
 		application = new App(driver);
 		//softAssertions = new SoftAssertions();
+		
 	}
 	
 }

@@ -1,6 +1,7 @@
 package testdata.models;
 
 public class LoginPageModel {
+	
 	private String name;
 	private String password;
 	

@@ -1,5 +1,7 @@
 package pages;
 
+import javax.inject.Inject;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,13 +15,14 @@ import testdata.models.LoginPageModel;
 
 public class LoginPage {
 	
+	@Inject
 	private WebDriver driver;
 	
 	@FindBy(name ="principal")
-	private WebElement password;
+	private WebElement name;
 	
 	@FindBy(name ="password")
-	private WebElement name;
+	private WebElement password;
 	
 	@FindBy(className ="actionButton")
 	private WebElement button;
@@ -31,17 +34,17 @@ public class LoginPage {
 	}
 	
 	@Step("Login and assert")
-	public AccountPage login(LoginPageModel nameValue, LoginPageModel passwordValue) {
+	public UserAccountPage login(LoginPageModel nameValue, LoginPageModel passwordValue) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver,10, 100);
 		wait.withMessage("error").until(ExpectedConditions.visibilityOf(name));
 		name.clear();
 		name.sendKeys(String.valueOf(nameValue.getName()));
-		
+		Thread.sleep(1000);
 		password.clear();
 		password.sendKeys(String.valueOf(passwordValue.getPassword()));
-		
+		Thread.sleep(1000);
 		button.click();
 		
-		return new AccountPage(driver);
+		return new UserAccountPage(driver);
 	}
 }

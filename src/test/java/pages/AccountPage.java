@@ -1,5 +1,7 @@
 package pages;
 
+import javax.inject.Inject;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,6 +10,7 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 public class AccountPage {
 	
+	@Inject
 	private WebDriver driver;
 	
 	@FindBy(className ="statusMenuText")
