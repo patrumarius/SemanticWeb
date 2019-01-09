@@ -30,12 +30,9 @@ public class MemberAccountPage {
 	
 	@Step("Verifier le solde du compte")
 	public MemberAccountPage verifierSoldeCompte() throws InterruptedException {
-		System.out.println("gg");
-		Thread.sleep(2000);
 		WebDriverWait wait = new WebDriverWait(driver,10, 100);
 		wait.withMessage("error").until(ExpectedConditions.visibilityOf(solde));
-		//System.out.println();
-		assertTrue(solde.getText().equals(solde.getText()));
+		assertTrue(solde.getText().equals("Balance: 5.108,94 IU's"));
 		return new MemberAccountPage(driver);
 	}
 	
