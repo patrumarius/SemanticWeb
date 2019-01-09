@@ -19,7 +19,10 @@ public class MemberAccountPage {
 	@Inject
 	private WebDriver driver;
 	
-	@FindBy(xpath = "(//*[@class='gwt-InlineLabel'])[7]")
+	/*@FindBy(xpath = "(//*[@class='gwt-InlineLabel'])[7]")
+	private WebElement solde;
+	*/
+	@FindBy(xpath = "//*[@class='pageHeadingText']")
 	private WebElement solde;
 	
 	public MemberAccountPage(WebDriver driver) {
@@ -32,7 +35,7 @@ public class MemberAccountPage {
 	public MemberAccountPage verifierSoldeCompte() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver,10, 100);
 		wait.withMessage("error").until(ExpectedConditions.visibilityOf(solde));
-		assertTrue(solde.getText().equals("Balance: 5.108,94 IU's"));
+		assertTrue(solde.getText().equals("Member account"));
 		return new MemberAccountPage(driver);
 	}
 	
