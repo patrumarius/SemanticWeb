@@ -64,8 +64,6 @@ public class UserAccountPage {
 		WebDriverWait wait = new WebDriverWait(driver,10, 100);
 		wait.withMessage("error").until(ExpectedConditions.visibilityOf(paneauGaucheListOptions.get(0)));
 		paneauGaucheListOptions.get(0).click();
-		Thread.sleep(3000);
-		//System.out.println("OK");
 		return new MemberAccountPage(driver);
 	}
 	
