@@ -29,7 +29,8 @@ public class MemberAccountPage {
 	}
 	
 	@Step("Verifier le solde du compte")
-	public MemberAccountPage verifierSoldeCompte() {
+	public MemberAccountPage verifierSoldeCompte() throws InterruptedException {
+		Thread.sleep(2000);
 		WebDriverWait wait = new WebDriverWait(driver,10, 100);
 		wait.withMessage("error").until(ExpectedConditions.visibilityOf(solde));
 		//System.out.println(solde.getText());
