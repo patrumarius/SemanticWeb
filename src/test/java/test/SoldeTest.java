@@ -7,9 +7,9 @@ import testdata.repos.LoginPageRepo;
 public class SoldeTest extends GeneralTest{
 
 	@Test
-	public void loginTest() throws Exception {
+	public void soldeTest() throws Exception {
 		application.openApp().openLogin().login(LoginPageRepo.insertName, LoginPageRepo.insertPassword)
-				.accederSoldeCompte();//.verifierSoldeCompte();
+				.accederSoldeCompte().verifierSoldeCompte();
 	}
 	
 }
