@@ -7,5 +7,4 @@ public class UserAccountPageRepo {
 
 	public static final UserAccountPageModel setNomUtilisateur = new UserAccountPageModel().setName("demo");
 	
-	
 }

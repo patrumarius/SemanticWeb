@@ -51,7 +51,8 @@ public class UserAccountPage {
 	}
 	
 	@Step("Verifier le nom de l'utilisateur courant") 
-	public UserAccountPage verifierNomUtilisateur(UserAccountPageModel nom) {
+	public UserAccountPage verifierNomUtilisateur(UserAccountPageModel nom) throws InterruptedException {
+		Thread.sleep(1000);
 		WebDriverWait wait = new WebDriverWait(driver,10, 100);
 		wait.withMessage("error").until(ExpectedConditions.visibilityOf(nomUtilisateurCourant));
 		assertTrue(nomUtilisateurCourant.getText().equals(nom.getName()));
@@ -59,11 +60,11 @@ public class UserAccountPage {
 	}
 	
 	@Step("Acceser le solde du compte")
-	public MemberAccountPage acceserSoldeCompte() {
+	public MemberAccountPage acceserSoldeCompte() throws InterruptedException {
 		paneauGaucheListOptions.get(0).click();
+		Thread.sleep(1000);
 		System.out.println("OK");
 		return new MemberAccountPage(driver);
 	}
-	
 	
 }

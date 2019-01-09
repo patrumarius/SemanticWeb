@@ -38,8 +38,9 @@ public class HomePage {
 	}
 	
 	@Step("Go to login")
-	public LoginPage openLogin() {
+	public LoginPage openLogin() throws InterruptedException {
 		signIn.click();
+		Thread.sleep(1000);
 		return new LoginPage(driver);
 	}
 	
